@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+
+# DOCUMENTO SOBRE GIT, GITHUB E SOBRE COMANDOS BÁSICOS PARA UTILIZAÇÃO
+# SUGESTÕES: UTILIZAR "Ctrl" + "f", para pesquisar sobre adicionar, deletar, excluir, clonar, criar
+
+# CRIAÇÃO DE REPOSITÓRIO
+
+## 1 - Abra o git bash e adicione o caminho da pasta que será o repositório
+	exemplo: cd "C:\caminho\DIO\git_basic"
+
+## 2 - Adicionado caminho do repositório, faça a inicialização do git
+	code: git init
+
+## 3 - Após iniciar a criação do repositório, adicione os dados de autor
+	code: git config --global user.email "estudante@email.com"
+		  git config --global user.name estudante
+
+
+# VINCULANDO REPOSITÓRIO LOCAL AO GITHUB
+
+## 1 - Entre no github, clique na seta do icone de perfil e selecione o campo "your repositories".
+	Aqui um atalho de link caso tenha dificuldades em encontrar: (https://github.com/seu_nome?tab=repositories). troque o "seu_nome" pelo seu nick.
+
+## 2 - Na nova tela de perfil, clique no campo "New" em cor verde.
+## 3 - Agora na janela de criação adicione o nome do repositório no campo "Repository name".
+	exemplo: dio_git_basic
+
+## 4 - Escolha se o perfil do repositório será público ou privado.
+## 5 - Caso necessite do readme, adicione marcando a opção "Add a README file".
+## 6 - Confirme a criação do repositório.
+## 7 - Após a confirmação, será carregado uma nova tela. Clique em "CODE" e copie o HTTPS.
+	Aqui o atalho de link caso tenha dificuldades em encontrar: (https://github.com/seu_nick/nome_do_repositorio)
+
+## 8 - Entre no git bash associe o git local ao github:
+	ATENÇÃO: CERTIFIQUE DE QUE O GIT BASH ENCONTRASE NO LOCAL DO REPOSITÓRIO.
+	code: git remote add origin https://github.com/AyltonAguiar/dio_git_basic.git
+
+## 9 - Caso seu branch esteja direcionando para MASTER invés de MAIN adicione o seguinte código:
+	git checkout -b main
+
+## 10 - Antes de adicionar as informações verifique se há alguma nova modificação para atualizar:
+	code: git pull origin main
+
+### 10.1 - Caso tenha feito alguma alteração nos arquivos, adicione os arquivos:
+	code: git add .	
+
+### 10.2 - Após baixar e adicionar as modificações, iremos comentar as últimas 
+	code: git commit -m "{atualizado} arquivo txt do git basics - observacoes e comandos extras"
+
+### 10.3 - Depois de comentar os arquivos modificados, basta agora adicioná-los ao repositório do github:
+	code: git push origin main
+
+## 11 - Agora basta adicionar os arquivos do repositório local ao repositório remoto.
+	ATENÇÃO: NÃO NECESSÁRIO CASO TENHA FEITO O item 10.3
+	code: git push origin main
+
+
+
+-- Pronto e finalizado, agora basta dar continuidade no seu trabalho no git. ;D valew.
+
+
+
+# COMANDOS EXTRAS E ALGUMAS EXPLICAÇÕES: 
+
+# verificar se há alguma modificação no repositório local
+git status
+
+# trocar a branch local para main. Comando CHECKOUT é para mudar de branch, e comando -b é para criar a branch caso não exista.
+git checkout -b main 
+
+# Adicionar os arquivos modificados
+git add .
+git add*
+git add caminho_do_arquivo
+
+# adicionar um repositório, atenção o ORIGIN é o alias para o https.git adicionado
+git remote add origin [HTTPS.git]
+
+# verificar as listas de repositórios remotos
+git remote -v
+
+# deletar uma branch do git local
+git branch -d [local_da_branch]
+
+# deletar uma branch do git remoto
+git push origin --delete [nome_remoto_da_branch]
+
+# clonar um repositório
+git clone [HTTPS.git]
